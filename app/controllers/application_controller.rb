@@ -8,18 +8,13 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  # landing page redirects to /posts
   get '/' do
     redirect '/posts'
   end
 
-  # CREATES a new blog post
   post '/posts' do
+    Post.create(name: params[:name], content: params[:content])
     @posts = Post.all
     erb :index
-  end
-
-  get '/posts/new' do
-    erb :new
   end
 end
