@@ -3,7 +3,7 @@
 <h4>Post Content</h4>
 <%= @post.content %><br>
 
-# add delete button 
+<!-- add delete button  -->
 <form action="/posts/<%=@post.id%>/delete" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" value="delete">
